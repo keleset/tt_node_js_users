@@ -1,4 +1,4 @@
-# Node.js + PostgreSQL basic example
+# Node.js (Koa) + SQLite basic example
 
 ## Initial task:
 ```
@@ -11,22 +11,12 @@ On the page, place the "Save" button, on click of which, user data is saved in a
 On the page, place the “Restore” button, which, on click, restores the data of the first saved user.
 ```
 ## How to start:
-* Install PostgreSQL;
 * Install Node.js;
 * Install the required Node modules by executing:
 ```
 npm install
 ```
 in the project's directory (using terminal/cmd);
-* Initialize database by opening terminal/cmd in the project's directory an do following:
-```
-initdb -D db -E 'UTF-8' --no-locale
-pg_ctl -D db start
-psql postgres
-CREATE USER postgres SUPERUSER;
-\q
-psql -U postgres -f postgres.sql
-```
 * Start the Node.js app:
 ```
 node app.js
@@ -36,3 +26,9 @@ node app.js
 http://127.0.0.1:8888/
 ```
 using your web browser.
+
+## Additions:
+* To re-initialize database, delete ./db/database.db file (but NOT ./db/ directory!) and do:
+```
+node initdb.js
+```
